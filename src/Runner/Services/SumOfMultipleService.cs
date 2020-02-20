@@ -1,6 +1,5 @@
 ﻿using ApplicationServices.Interfaces;
 using Runner.Interfaces;
-using SumOfMultiple;
 using SumOfMultiple.Interfaces;
 using System;
 using System.Threading.Tasks;
