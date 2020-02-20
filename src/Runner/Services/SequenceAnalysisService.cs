@@ -1,5 +1,6 @@
 ﻿using ApplicationServices.Interfaces;
-using SequenceAnalysis;
+using Runner.Interfaces;
+using SequenceAnalysis.Interfaces;
 using System;
 using System.Threading.Tasks;
 
@@ -7,19 +8,23 @@ namespace ApplicationServices
 {
     public class SequenceAnalysisService : IProblemSolver
     {
-        private readonly SequenceAnalyser _sequenceAnalyser;
+        private readonly ISequenceAnalyser _sequenceAnalyser;
+        private readonly IConsoleWrapper _console;
 
-        public SequenceAnalysisService(SequenceAnalyser sequenceAnalyser)
+        public SequenceAnalysisService(
+            ISequenceAnalyser sequenceAnalyser,
+            IConsoleWrapper console)
         {
             _sequenceAnalyser = sequenceAnalyser ?? throw new ArgumentNullException(nameof(sequenceAnalyser));
+            _console = console ?? throw new ArgumentNullException(nameof(console));
         }
 
         public Task<string> Start()
         {
-            Console.WriteLine("Please enter some text to be analyzed: ");
-            var text = Console.ReadLine();
+            _console.WriteLine("Please enter some text to be analyzed: ");
+            var text = _console.ReadLine();
 
-            Console.WriteLine("Initializing analysis...");
+            _console.WriteLine("Initializing analysis...");
             return _sequenceAnalyser.Analyse(text);
         }
     }

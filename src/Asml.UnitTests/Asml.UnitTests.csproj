@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Runner\Runner.csproj" />
     <ProjectReference Include="..\SequenceAnalysis\SequenceAnalysis.csproj" />
     <ProjectReference Include="..\SumOfMultiple\SumOfMultiple.csproj" />
   </ItemGroup>

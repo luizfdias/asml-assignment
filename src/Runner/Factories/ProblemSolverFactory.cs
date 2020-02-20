@@ -12,14 +12,16 @@ namespace Runner.Factories
             if (userAction.Equals("1"))
             {
                 return new SumOfMultipleService(
-                    new NaturalNumberSumCalculator());
+                    new NaturalNumberSumCalculator(),
+                    new ConsoleWrapper());
             }
             else if (userAction.Equals("2"))
             {
                 return new SequenceAnalysisService(
                     new SequenceAnalyser(
                         new StringLinqSorter(), 
-                        new UppercaseWordsFinder()));
+                        new UppercaseWordsFinder()),
+                    new ConsoleWrapper());
             }
 
             return null;
