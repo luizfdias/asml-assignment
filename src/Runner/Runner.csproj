@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SequenceAnalysis\SequenceAnalysis.csproj" />
+    <ProjectReference Include="..\SumOfMultiple\SumOfMultiple.csproj" />
+  </ItemGroup>
+
+</Project>
